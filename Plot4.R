@@ -12,7 +12,7 @@ merge <- merge(x=NEI, y=SCC.coal, by='SCC')
 merge.sum <- aggregate(merge[, 'Emissions'], by=list(merge$year), sum)
 colnames(merge.sum) <- c('Year', 'Emissions')
 
-png("plot4.png")
+png("Plot4.png")
 
 ggplot(data=merge.sum, aes(x=Year, y=Emissions/1000)) + 
   geom_line(aes(group=1, col=Emissions)) + geom_point(aes(size=2, col=Emissions)) + 

@@ -10,7 +10,7 @@ Baltimore <- subset(NEI, fips == "24510")
 NEI_sampling <- NEI[sample(nrow(NEI), size=5000, replace=F), ]
 Baltimore$year <- factor(Baltimore$year, levels=c('1999', '2002', '2005', '2008'))
 
-png("plot3.png")
+png("Plot3.png")
 ggplot(data=Baltimore, aes(x=year, y=log(Emissions))) + facet_grid(. ~ type) + guides(fill=F) +
   geom_boxplot(aes(fill=type)) + stat_boxplot(geom ='errorbar') +
   ylab(expression(paste('Log', ' of PM'[2.5], ' Emissions'))) + xlab('Years') + 

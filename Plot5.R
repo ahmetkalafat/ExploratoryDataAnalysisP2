@@ -12,7 +12,7 @@ Mariland.onroad <- subset(NEI, fips == 24510 & type == 'ON-ROAD')
 Mariland.df <- aggregate(Mariland.onroad[, 'Emissions'], by=list(Mariland.onroad$year), sum)
 colnames(Mariland.df) <- c('year', 'Emissions')
 
-png("plot5.png")
+png("Plot5.png")
 
 ggplot(data=Mariland.df, aes(x=year, y=Emissions)) + geom_bar(stat="identity",fill="grey",width=0.75) + guides(fill=F) + 
   ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + 

@@ -6,6 +6,6 @@
 NEI <- readRDS("summarySCC_PM25.rds")
 Baltimore <- subset(NEI, fips == "24510")
 total <- tapply(Baltimore$Emissions, Baltimore$year, sum)
-png("plot2.png")
+png("Plot2.png")
 plot(names(total), total, type="l", xlab="Years", ylab=expression("Total Baltimore City  Emissions (tons)"), main=expression("Total Baltimore City Emissions by Year"))
 dev.off()

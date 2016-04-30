@@ -5,6 +5,6 @@
 
 NEI<- readRDS("summarySCC_PM25.rds")
 total <- tapply(NEI$Emissions, NEI$year, sum)
-png("plot1.png")
+png("Plot1.png")
 plot(names(total), total, type="l", xlab="Years", ylab=expression("Total Emissions"), main=expression("Total  Emissions by Year"))
 dev.off()
